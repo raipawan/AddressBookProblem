@@ -9,7 +9,7 @@ namespace AddressBookProblem
 
         List<Contact> contacts = new List<Contact>();
 
-        public bool AddContact(Contact contact)
+        public bool CreatContact(Contact contact)
         {
 
             if (contact != null)
@@ -22,7 +22,7 @@ namespace AddressBookProblem
         public void DislpayContact(Contact contact)
         {
 
-            foreach (Contact result in contacts)
+            foreach (var result in contacts)
             {
                 Console.WriteLine(contact.FirstName + " " + contact.LastName + " " + contact.City + " " + contact.State + " " + contact.PinCode + " " + contact.PhoneNumber + " " + contact.Email);
             }
