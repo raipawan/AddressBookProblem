@@ -17,14 +17,14 @@ namespace AddressBookProblem
                 contacts.Add(contact);
                 return true;
             }
-            return false;
+            return true;
         }
         public void DislpayContact(Contact contact)
         {
 
             foreach (Contact result in contacts)
             {
-                Console.WriteLine(result);
+                Console.WriteLine(contact.FirstName + " " + contact.LastName + " " + contact.City + " " + contact.State + " " + contact.PinCode + " " + contact.PhoneNumber + " " + contact.Email);
             }
         }
 

@@ -6,8 +6,8 @@ namespace AddressBookProblem
 {
     public class Contact
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstName;
+        public string LastName;
         public string City;
         public string State;
         public string PinCode;
