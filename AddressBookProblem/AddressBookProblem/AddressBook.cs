@@ -4,70 +4,32 @@ using System.Text;
 
 namespace AddressBookProblem
 {
-    class AddressBook
+    public class AddressBook
     {
-        Dictionary<string, Contact> ContactList;
 
-        public AddressBook()
-        {
-            this.ContactList = new Dictionary<string, Contact>();
-        }
+        List<Contact> contacts = new List<Contact>();
+
         public bool AddContact(Contact contact)
         {
-            string name = contact.FirstName + " " + contact.LastName;
-            if (!ContactList.ContainsKey(name))
+
+            if (contact != null)
             {
-                ContactList.Add(name, contact);
+                contacts.Add(contact);
                 return true;
             }
             return false;
         }
-
-        public bool RemoveContact(string name)
+        public void DislpayContact(Contact contact)
         {
-            if (ContactList.ContainsKey(name))
+
+            foreach (Contact result in contacts)
             {
-                ContactList.Remove(name);
-                return true;
+                Console.WriteLine(result);
             }
-            return false;
         }
 
-        public Contact SearchContact(string name)
-        {
-            Contact contact = null;
-            if (ContactList.ContainsKey(name))
-            {
-                contact = ContactList[name];
-                Console.WriteLine("Contact name is :" + contact.FirstName + " " + contact.LastName);
-                Console.WriteLine("Contact mob No. is :" + contact.PhoneNumber);
-                Console.WriteLine("Contact email is :" + contact.Email);
-                Console.WriteLine("Contact address is :" + contact.Address());
-            }
-            return contact;
-        }
 
-        public bool EditContact(Contact newContact)
-        {
-            string name = newContact.FirstName + " " + newContact.LastName;
-            if (ContactList.ContainsKey(name))
-            {
-                ContactList[name] = newContact;
-                return true;
-            }
-            return false;
 
-        }
 
-        public string GetAddress(string name)
-        {
-            if (ContactList.ContainsKey(name))
-            {
-                Contact contact = null;
-                string address = contact.City + " " + contact.State + " " + contact.PinCode;
-                return address;
-            }
-            return null;
-        }
     }
 }

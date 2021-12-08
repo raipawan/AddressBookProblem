@@ -4,10 +4,10 @@ using System.Text;
 
 namespace AddressBookProblem
 {
-    class Contact
+    public class Contact
     {
-        public string FirstName;
-        public string LastName;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string City;
         public string State;
         public string PinCode;
@@ -24,11 +24,5 @@ namespace AddressBookProblem
             PhoneNumber = phoneNumber;
             Email = email;
         }
-        public string Address()
-        {
-
-            string address = "City" + " " + "State" + " " + "PinCode";
-            return address;
-
-        }
     }
+}
